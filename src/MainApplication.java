@@ -1,5 +1,15 @@
+import StringManipulation.*;
+
+
 public class MainApplication {
+    private HelloWorld hello;
+
+    public MainApplication(){
+        this.hello = new HelloWorld();
+    }
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MainApplication mainApplication = new MainApplication();
+        mainApplication.hello.Hello();
+
     }
 }
