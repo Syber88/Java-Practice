@@ -18,7 +18,7 @@ public class MainApplication {
         MainApplication mainApplication = new MainApplication();
         System.out.println(mainApplication.hello.Hello());
         System.out.println(mainApplication.reverse.reverse(reversal));
-        System.out.println(mainApplication.anagram.anagramChecker( "silent",  "listens"));
+        System.out.println(mainApplication.anagram.anagramChecker( "dormitory",  "dirty room"));
 
 
     }
