@@ -21,6 +21,6 @@ public class Pangram {
             if (letters == letter)
                 return true;
         }
-        return false
+        return false;
     }
 }

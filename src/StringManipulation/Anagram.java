@@ -1,8 +1,6 @@
 package StringManipulation;
 
-import java.util.Arrays;
 import java.util.List;
-
 import QuickUtils.StringUtils;
 
 public class Anagram {
@@ -16,12 +14,15 @@ public class Anagram {
                 isAnagram = targetInit + " is an anagram of " + wordInit;
 
         if (word.length() == target.length()){
-            char[] tempArray = word.toCharArray(),targetArray = target.toCharArray();
-            Arrays.sort(tempArray);
-            Arrays.sort(targetArray);
+
+            StringUtils sorter = new StringUtils();
+            List<String> wordSorted = sorter.StringSorter(word, target);
+
+            char[] wordArray = wordSorted.getFirst().toCharArray(),
+                    targetArray = wordSorted.get(1).toCharArray();
 
             for (int i = 0; i < word.length(); i++){
-                if (tempArray[i] != targetArray[i]) {
+                if (wordArray[i] != targetArray[i]) {
                     return notAnagram;
                 }
             } return isAnagram;
