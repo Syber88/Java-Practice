@@ -1,7 +1,9 @@
 package StringManipulation;
 
 public class HelloWorld {
-    public void Hello(){
-        System.out.println("hello world!!!");
+    public String Hello()
+    {
+        String greeting = "hello world!!";
+        return greeting;
     }
 }

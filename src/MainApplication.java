@@ -12,9 +12,10 @@ public class MainApplication {
     }
 
     public static void main(String[] args) {
+        String reversal = "hello there how are you ";
         MainApplication mainApplication = new MainApplication();
-        mainApplication.hello.Hello();
-        mainApplication.reverse.reverse("hello there how are you");
+        System.out.println(mainApplication.hello.Hello());
+        System.out.println(mainApplication.reverse.reverse(reversal));
 
 
     }
