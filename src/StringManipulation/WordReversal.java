@@ -9,8 +9,10 @@ public class WordReversal {
         String[] arrayStr =  words.split(" ");
         Collections.reverse(Arrays.stream(arrayStr).toList());
         for (String word : arrayStr){
-            System.out.println(word);
+            reversedWord += word;
+            System.out.println(reversedWord);
         }
+//        return reversedWord;
     }
 }
 
