@@ -4,11 +4,13 @@ import StringManipulation.*;
 public class MainApplication {
     private HelloWorld hello;
     private WordReversal reverse;
+    private Anagram anagram;
 
 
     public MainApplication(){
         this.hello = new HelloWorld();
         this.reverse = new WordReversal();
+        this.anagram = new Anagram();
     }
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class MainApplication {
         MainApplication mainApplication = new MainApplication();
         System.out.println(mainApplication.hello.Hello());
         System.out.println(mainApplication.reverse.reverse(reversal));
+        System.out.println(mainApplication.anagram.anagramChecker( "silent",  "listens"));
 
 
     }
