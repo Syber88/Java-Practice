@@ -60,8 +60,9 @@ public class StringUtils {
      * @return {@code true} if the specified character is found in the array; {@code false} otherwise.
      */
     public boolean containsChar(char[] characters, char letter) {
-        for (char letters : characters) {
-            if (letters == letter)
+        for (char character : characters) {
+            character = Character.toLowerCase(character);
+            if (character == letter)
                 return true;
         }
         return false;
