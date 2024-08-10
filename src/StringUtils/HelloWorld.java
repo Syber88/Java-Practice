@@ -1,4 +1,4 @@
-package StringManipulation;
+package StringUtils;
 
 public class HelloWorld {
     public String Hello()

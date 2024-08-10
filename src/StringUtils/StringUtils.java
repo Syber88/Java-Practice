@@ -1,15 +1,71 @@
-package QuickUtils;
+package StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-//you can use this to strip the white space within words. no limits as too how many to parameterise
-//just need to make sure i know how to access list variables
 /**
  * A utility class for performing operations on strings.
  */
 public class StringUtils {
+
+    public static String anagramChecker(String wordInit, String targetInit){
+        StringUtils stripper = new StringUtils();
+        List<String> wordList = stripper.StripSpaces(wordInit, targetInit);
+        String word = wordList.get(0);
+        String target = wordList.get(1);
+
+        String notAnagram = targetInit + " is not an anagram of " + wordInit,
+                isAnagram = targetInit + " is an anagram of " + wordInit;
+
+        if (word.length() == target.length()){
+
+            StringUtils sorter = new StringUtils();
+            List<String> wordSorted = sorter.StringSorter(word, target);
+
+            char[] wordArray = wordSorted.getFirst().toCharArray(),
+                    targetArray = wordSorted.get(1).toCharArray();
+
+            for (int i = 0; i < word.length(); i++){
+                if (wordArray[i] != targetArray[i]) {
+                    return notAnagram;
+                }
+            } return isAnagram;
+        }
+        return notAnagram;
+    }
+
+    public String reverse(String words){
+        String reversedWord = "";
+        String[] arrayStr =  words.split(" ");
+        List<String> mutableList = new ArrayList<>(Arrays.asList(arrayStr));
+        Collections.reverse(mutableList);
+        for (String word : mutableList){
+            reversedWord += word + " ";
+        }
+//        System.out.println(reversedWord);
+        return reversedWord;
+    }
+
+
+    public String PangramChecker(String word){
+        boolean perfectPangram = false;
+        String Affirmative = word + " is a Pangram ";
+        String Negative = word + " is a not Pangram ";
+
+        if (word.length() == 26) perfectPangram = true;
+        String characters = "";
+
+        for (char letter : word.toCharArray()){
+            StringUtils charCon = new StringUtils();
+            if (!charCon.containsChar(characters.toCharArray(), letter))
+                characters += letter;
+
+            if (characters.length() == 26) return Affirmative;
+        }
+        return Negative;
+    }
 
     /**
      * Removes all white spaces from the given words.
@@ -67,4 +123,6 @@ public class StringUtils {
         }
         return false;
     }
+
+
 }
