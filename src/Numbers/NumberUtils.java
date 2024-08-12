@@ -1,5 +1,8 @@
 package Numbers;
 
+import java.util.HashMap;
+import java.util.*;
+
 public class NumberUtils {
 
     public static boolean isNarcissistic(int number) {
@@ -12,4 +15,28 @@ public class NumberUtils {
         }
         return sum == number;
     }
+
+
+    public static int findOddAppearance(int[] a) {
+        /*Given an array of integers, find the one that appears an odd number of times.
+
+        There will always be only one integer that appears an odd number of times.*/
+
+        Map<Integer, Integer> nums = new HashMap<>();
+        for (int number : a) {
+            if (!nums.containsKey(number)){
+                nums.put(number, 1);}
+            else {
+                nums.put(number, nums.get(number) + 1);
+            }
+        }
+
+        for (int key : nums.keySet()){
+            if (nums.get(key) % 2 != 0 )
+                return key;
+
+        }
+        return -1;
+
+}
 }
