@@ -5,6 +5,17 @@ import java.util.*;
 
 public class NumberUtils {
 
+    public static int digitalRoot(int number){
+        if (number < 9){
+            return number;
+        }
+        String numbers = Integer.toString(number);
+        int[] numberList = new int[numbers.length()];
+        for (int i = 0; i < numbers.length(); i++){
+            numberList[i] = Character.getNumericValue(numbers.charAt(i));
+        }
+    }
+
     public static boolean isNarcissistic(int number) {
         int power = String.valueOf(number).length();
         int sum = 0;
