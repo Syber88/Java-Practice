@@ -38,5 +38,9 @@ public class NumberUtils {
         }
         return -1;
 
-}
+    }
+
+//    public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+//
+//    }
 }

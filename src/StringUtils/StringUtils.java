@@ -10,6 +10,14 @@ import java.util.List;
  */
 public class StringUtils {
 
+    /*Complete the solution so that it returns true if the first argument(string) passed in ends with the
+     2nd argument (also a string).*/
+    public static boolean stringEnd(String str, String ending){
+        String reversedStr = new StringBuilder(str).reverse().toString();
+        return reversedStr.startsWith(new StringBuilder(ending).reverse().toString());
+
+    }
+
     public static String anagramChecker(String wordInit, String targetInit){
         StringUtils stripper = new StringUtils();
         List<String> wordList = stripper.StripSpaces(wordInit, targetInit);
